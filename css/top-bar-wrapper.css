@@ -1,0 +1,148 @@
+/* begin:顶部导航条容器  */
+
+.top-bar-wrapper {
+  /* 设置宽度全屏 */
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #333333;
+}
+
+.topbar a {
+  font-size: 12px;
+  color: #b0b0b0;
+  /* 由于行内元素设置不了宽度,是被内容区撑开
+    所以要让元素可以在范围内被点击 要将行内元素变成块元素*/
+  display: block;
+}
+
+/* 鼠标移入效果 */
+
+.topbar a:hover {
+  color: #ffffff;
+}
+
+.topbar .line {
+  font-size: 12px;
+  color: #424242;
+  margin: 0 8px;
+  margin-top: 2px;
+}
+
+/* 左侧导航栏 */
+
+.service, .topbar li {
+  float: left;
+}
+
+.app {
+  /* 开启相对定位 让后面的小三角相对于这个块进行定位*/
+  position: relative;
+}
+
+.app .qrcode {
+  /* 设置高宽 */
+  width: 124px;
+  /* height: 148px; */
+  left: -38px;
+  /* 字体默认用的是top-bar-wrapper总屏幕的行高 要清除行高 */
+  line-height: 1;
+  text-align: center;
+  background-color: #ffffff;
+  /* 设置阴影效果 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  /* 开启绝对定位 */
+  position: absolute;
+  /* 隐藏下拉栏 display: none; */
+  /* 下面为过度动画效果
+      先设置高度为0 当鼠标移入时再显示高度
+      使用overflow剪裁掉多余的部分
+        --transition 过渡动画效果
+      使用transition设置为 高度属性发生变化时 使用3秒动画的效果显示
+   */
+  height: 0;
+  overflow: hidden;
+  transition: height 1s;
+  z-index: 9999999;
+}
+
+li:hover>.app .qrcode {
+  display: block;
+  /* 添加过渡动画后 当鼠标移入时 显示高度 */
+  height: 148px;
+  z-index: 9999;
+}
+
+/* 当鼠标滑到li时 打开下拉选项 使用伪类元素before */
+
+li:hover>.app::before {
+  /* 设置高宽 */
+  width: 0;
+  height: 0;
+  content: '';
+  /* 开启绝对定位 */
+  position: absolute;
+  /* 变成块元素 也可以默认为不写 因为当开启绝对定位后 默认转换成块元素 */
+  display: block;
+  /* 设置边框 */
+  border: 6px solid transparent;
+  /* 清除边框的上边距 */
+  border-top: none;
+  /* 设置边框下边距的颜色 */
+  border-bottom-color: #ffffff;
+  left: 16px;
+  top: 34px;
+}
+
+.app .qrcode img {
+  width: 90px;
+  margin: 17px;
+  margin-bottom: 10px;
+}
+
+.app .qrcode span {
+  color: #000000;
+  font-size: 14px;
+}
+
+.shop-cart, .user-info {
+  float: right;
+}
+
+.shop {
+  position: relative;
+}
+
+.shop .qrcode {
+  width: 276px;
+  height: 0;
+  overflow: hidden;
+  transition: height .3s;
+  background-color: white;
+  line-height: 7;
+  color: #000000;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+  position: absolute;
+  left: -156px;
+}
+
+li:hover>.shop .qrcode {
+  display: block;
+  /* border: 1px solid red; */
+  height: 100px;
+  z-index: 9999;
+}
+
+.shop-cart a {
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  background-color: #424242;
+  margin-left: 20px;
+}
+
+.shop-cart:hover a {
+  background-color: #ffffff;
+  color: #ff6700;
+}

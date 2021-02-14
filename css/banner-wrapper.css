@@ -1,0 +1,81 @@
+/* 设置轮播图的动画效果 */
+
+.banner {
+  position: relative;
+  height: 460px;
+}
+
+.banner .img-list li {
+  position: absolute;
+}
+
+.banner img {
+  width: 100%;
+}
+
+/* 设置导航五个点 */
+
+.pointer {
+  position: absolute;
+  bottom: 22px;
+  right: 35px;
+}
+
+.pointer a {
+  float: left;
+  width: 6px;
+  height: 6px;
+  border: 2px solid rgba(255, 255, 255, .4);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .4);
+  margin-left: 6px;
+}
+
+.pointer a:hover, .pointer .active {
+  border-color: rgba(0, 0, 0, .4);
+  background-color: rgba(255, 255, 255, .4);
+}
+
+/* 左右箭头的图标 */
+.prev-next a{
+  background-image: url(../image/icon-slides.png);
+  width: 41px;
+  height: 69px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.prev-next .prev{
+  left: 234px;
+  background-position: -84px 0;
+}
+
+.prev-next .prev:hover{
+  background-position: 0 0;
+}
+
+.prev-next .next{
+  right: 0;
+  background-position: -125px 0;
+}
+
+.prev-next .next:hover{
+  background-position: -42px 0;
+}
+
+/* 左侧工具栏 */
+.back-top{
+  width: 26px;
+  height: 206px;
+  background-color: white;
+  position: fixed;
+  bottom: 100px;
+  right: 50%;
+         /*布局等式
+          left+margin-left+width+margin-right+right = 视口宽度
+          auto+0+26+639px+50% = 视口宽度
+         */
+  margin-right: -639px;
+}

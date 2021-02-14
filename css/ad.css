@@ -1,0 +1,74 @@
+/* 导航条的广告容器*/
+
+.ad {
+  height: 170px;
+  margin-top: 14px;
+}
+
+.ad .shortcut, .ad .imgs, .ad li {
+  float: left;
+}
+
+.ad .shortcut {
+  width: 234px;
+  height: 168px;
+  padding-top: 2px;
+  background-color: #5f5750;
+  margin-right: 14px;
+}
+
+.ad .shortcut li {
+  /* 开启相对定位 */
+  position: relative;
+}
+
+.ad .shortcut li::before {
+  content: '';
+  width: 64px;
+  height: 1px;
+  position: absolute;
+  background-color: #665e57;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 0 auto;
+}
+
+.ad .shortcut li::after {
+  content: '';
+  position: absolute;
+  height: 70px;
+  width: 1px;
+  background-color: #665e57;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.ad .shortcut a {
+  color: #cfccca;
+  display: block;
+  height: 84px;
+  width: 76px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.ad .imgs li {
+  width: 316px;
+  margin-right: 15px;
+}
+
+/* 选中li最后一个元素 */
+
+.ad .imgs li:last-child {
+  margin: 0;
+}
+
+.ad .imgs img {
+  width: 100%;
+  vertical-align: top;
+}
